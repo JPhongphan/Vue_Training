@@ -1,23 +1,53 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import MeView from '../views/MeView.vue'
+// import Toolbar from '../views/Toolbar.vue'
+// import Simple from '../views/Simple.vue'
+// import Grade from '../views/Grade.vue'
+// import APIcon from '../views/APIcon.vue'
+import Products from '../views/Products.vue'
+import Orders from '../views/Orders.vue'
+import Products_Admin from '../views/Products_admin.vue'
+// import Navbar from '../components/Navbar.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'meview',
+    component: MeView
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+      {
+        path: '/products',
+        name: 'products',
+        component: Products,
+      },
+      {
+      path: '/products_admin',
+      name: 'products_admin',
+      component: Products_Admin,
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: Orders,
+    }
+  // {
+  //   path: '/simple',
+  //   name: 'simple',
+  //   component: Simple,
+  // },
+  //   {
+  //   path: '/grade',
+  //   name: 'grade',
+  //   component: Grade,
+  // },
+  // {
+  //   path: '/products',
+  //   name: 'products',
+  //   component: Products,
+  // },
 ]
 
 const router = new VueRouter({
